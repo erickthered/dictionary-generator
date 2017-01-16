@@ -61,13 +61,15 @@ def main(argv):
         startWord = alphabet[0] * n
         endWord = alphabet[len(alphabet) - 1] * n
         word = startWord
-        print word,"\t",md5(word)
+        outputFile = open("output.txt", "w", 1)
+        outputFile.write(word + "\t" + md5(word) + "\n")
 
         while word != endWord:
             word = nextWord(word)
-            print word,"\t",md5(word)
+            outputFile.write(word + "\t" + md5(word) + "\n")
             i += 1
 
+        outputFile.close()
         print str(i) + " Words"
     else:
         print "Usage: "
