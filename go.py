@@ -62,7 +62,7 @@ def main(argv):
         startWord = alphabet[0] * n
         endWord = alphabet[len(alphabet) - 1] * n
         word = startWord
-        outputFile = codecs.open("output.txt", "w", 1)
+        outputFile = codecs.open("output.txt", "w", "utf-8")
         outputFile.write(word + "\t" + md5(word) + "\n")
 
         while word != endWord:
