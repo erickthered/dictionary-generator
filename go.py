@@ -5,6 +5,7 @@ import hashlib
 import string
 import sys
 import getopt
+import codecs
 
 alphabet = list(string.printable)
 alphabet = alphabet[0:-5] + [u"á", u"é", u"í", u"ó", u"ú", u"Á", u"É", u"Í", u"Ó", u"Ú", u"ñ", u"Ñ", u"ü", u"Ü"]
@@ -61,7 +62,7 @@ def main(argv):
         startWord = alphabet[0] * n
         endWord = alphabet[len(alphabet) - 1] * n
         word = startWord
-        outputFile = open("output.txt", "w", 1)
+        outputFile = codecs.open("output.txt", "w", 1)
         outputFile.write(word + "\t" + md5(word) + "\n")
 
         while word != endWord:
